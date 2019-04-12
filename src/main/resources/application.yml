@@ -1,3 +1,6 @@
 micronaut:
     application:
         name: wheresmypassport
+
+passports-url: "https://spain.mid.ru/documents/1803126/23784574/razr1.pdf"
+expecting-name: "РАЗГОВОРОВ"
