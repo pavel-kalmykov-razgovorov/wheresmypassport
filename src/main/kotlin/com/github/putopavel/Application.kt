@@ -2,11 +2,10 @@ package com.github.putopavel
 
 import io.micronaut.runtime.Micronaut
 
-@Suppress("unused")
 object Application {
 
     @JvmStatic
-    fun main() {
+    fun main(args: Array<String>) {
         Micronaut.build()
                 .packages("com.github.putopavel")
                 .mainClass(Application.javaClass)
