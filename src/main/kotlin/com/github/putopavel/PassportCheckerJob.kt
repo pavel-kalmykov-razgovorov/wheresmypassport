@@ -5,7 +5,7 @@ import javax.inject.Singleton
 
 @Suppress("unused")
 @Singleton
-class PasswordCheckerJob(
+class PassportCheckerJob(
         private val passportCheckerUseCase: PassportCheckerUseCase) {
 
     @Scheduled(cron = "\${passports.cron}")

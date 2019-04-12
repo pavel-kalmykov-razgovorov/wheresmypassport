@@ -16,7 +16,7 @@ class PassportCheckerUseCase(
     fun isPassportReady(name: String = expectingName): Boolean {
         val extractedText = remotePdfTextExtractorUseCase.extractText(URL(passportsListUrl))
         val contains = extractedText.contains(name.toRegex(setOf(IGNORE_CASE, MULTILINE)))
-        LOG.info("$name's password is ${if (contains) "" else "not"} ready${if (contains) "!" else "."}")
+        LOG.info("$name's passport is ${if (contains) "" else "not"} ready${if (contains) "!" else "."}")
         return contains
     }
 
