@@ -14,6 +14,7 @@ group "com.github.putopavel"
 
 repositories {
     mavenCentral()
+    jcenter()
     maven { url "https://jcenter.bintray.com" }
 }
 
@@ -34,6 +35,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
     compile "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"
     compile "io.micronaut:micronaut-runtime"
+    compile 'org.apache.tika:tika-parsers:1.20'
     kapt "io.micronaut:micronaut-inject-java"
     kapt "io.micronaut:micronaut-validation"
     kaptTest "io.micronaut:micronaut-inject-java"
@@ -43,6 +45,7 @@ dependencies {
     testCompile "org.junit.jupiter:junit-jupiter-api"
     testCompile "io.micronaut.test:micronaut-test-junit5"
     testCompile "org.jetbrains.spek:spek-api:1.1.5"
+    testImplementation "org.amshove.kluent:kluent:${kluentVersion}"
     testRuntime "org.junit.jupiter:junit-jupiter-engine"
     testRuntime "org.jetbrains.spek:spek-junit-platform-engine:1.1.5"
 }
