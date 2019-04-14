@@ -3,6 +3,18 @@ micronaut:
     name: wheresmypassport
 
 passports:
-  url: "https://spain.mid.ru/documents/1803126/23784574/razr1.pdf"
-  expecting-name: "РАЗГОВОРОВ"
-  cron: "0 0 12 * * ?"
+  url: https://spain.mid.ru/documents/1803126/23784574/razr1.pdf
+  expecting-name: РАЗГОВОРОВ
+  cron: 0 0 12 * * ?
+
+mail:
+  smtp:
+    ssl: no
+    tls: yes
+    timeout: 10000
+    host: smtp.mailtrap.io
+    port: 2525
+    username: hellobots!
+    password: hellobots!
+    transmitter: mantecabox@gmail.com
+    recipient: mantecabox@gmail.com

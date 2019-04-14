@@ -10,6 +10,6 @@ class PassportCheckerJob(
 
     @Scheduled(cron = "\${passports.cron}")
     fun execute() {
-        passportCheckerUseCase.isPassportReady()
+        passportCheckerUseCase.sendMailIfReady()
     }
 }

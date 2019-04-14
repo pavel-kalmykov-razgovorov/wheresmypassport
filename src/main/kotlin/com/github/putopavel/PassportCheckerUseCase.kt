@@ -10,6 +10,7 @@ import kotlin.text.RegexOption.MULTILINE
 @Singleton
 class PassportCheckerUseCase(
         private val remotePdfTextExtractorUseCase: RemotePdfTextExtractorUseCase,
+        private val mailPassportResponseUseCase: MailPassportResponseUseCase,
         @Value("\${passports.url}") val passportsListUrl: String,
         @Value("\${passports.expecting-name}") val expectingName: String) {
 
@@ -18,6 +19,13 @@ class PassportCheckerUseCase(
         val contains = extractedText.contains(name.toRegex(setOf(IGNORE_CASE, MULTILINE)))
         LOG.info("$name's passport is ${if (contains) "" else "not"} ready${if (contains) "!" else "."}")
         return contains
+    }
+
+    // Everything is read from the config
+    fun sendMailIfReady() {
+        if (isPassportReady()) {
+            mailPassportResponseUseCase.send()
+        }
     }
 
     companion object {
